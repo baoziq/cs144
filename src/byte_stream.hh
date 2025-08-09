@@ -20,6 +20,10 @@ public:
 
   void set_error() { error_ = true; };       // Signal that the stream suffered an error.
   bool has_error() const { return error_; }; // Has the stream had an error?
+  std::string buffer; // 缓冲区
+  bool closed = false; // 标记是否关闭
+  uint64_t amount_poped = 0;  // pop数量
+  uint64_t amount_pushed = 0; // push数量
 
 protected:
   // Please add any additional state to the ByteStream here, and not to the Writer and Reader interfaces.
@@ -50,7 +54,7 @@ public:
 };
 
 /*
- * read: A (provided) helper function thats peeks and pops up to `len` bytes
+ * read: A (provided) helper function thats peeks and pops up to `max_len` bytes
  * from a ByteStream Reader into a string;
  */
-void read( Reader& reader, uint64_t len, std::string& out );
+void read( Reader& reader, uint64_t max_len, std::string& out );
