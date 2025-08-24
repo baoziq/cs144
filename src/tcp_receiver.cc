@@ -22,9 +22,7 @@ void TCPReceiver::receive( TCPSenderMessage message )
       first_index = 0;
     }
     reassembler_.insert(first_index, data, message.FIN);
-  }
-
-  
+  }  
 }
 
 TCPReceiverMessage TCPReceiver::send() const
