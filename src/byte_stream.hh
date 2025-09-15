@@ -12,7 +12,7 @@ class ByteStream
 public:
   explicit ByteStream( uint64_t capacity );
 
-  // Helper functions (provided) to access the ByteStream's Reader and Writer interfaces
+  // Helper functions (provided) to access the ByteStream's Raeder and Writer interfaces
   Reader& reader();
   const Reader& reader() const;
   Writer& writer();
